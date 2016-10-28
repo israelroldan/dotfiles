@@ -7,3 +7,14 @@ for file in ~/.{path,exports,aliases,functions,extra}; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
+
+# zsh history search
+# pre-requisite `brew install zsh-history-substring-search`
+# NOTE: must be placed after zsh-syntax-highlighting if used together
+# readme: /usr/local/opt/zsh-history-substring-search/README.md
+hist_plug=/usr/local/opt/zsh-history-substring-search/zsh-history-substring-search.zsh
+if [ -f $hist_plug ]; then
+  source $hist_plug
+  bindkey "$terminfo[kcuu1]" history-substring-search-up
+  bindkey "$terminfo[kcud1]" history-substring-search-down
+fi
