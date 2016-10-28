@@ -10,6 +10,7 @@ function doIt() {
 		--exclude ".DS_Store" \
 		--exclude "bootstrap.sh" \
 		--exclude "README.md" \
+		--exclude ".gitconfig" \
 		--exclude "LICENSE" \
 		-avh --no-perms . ~;
 	source ~/.zshrc;
