@@ -5,6 +5,8 @@ cd "$(dirname "${BASH_SOURCE}")";
 git pull origin master;
 
 function doIt() {
+    cp zsh-history-substring-search.zsh /usr/local/share/zsh/site-functions/zsh-history-substring-search.sh
+    chmod +x /usr/local/share/zsh/site-functions/zsh-history-substring-search.sh
 	rsync --exclude ".git/" \
 		--exclude ".idea/" \
 		--exclude ".DS_Store" \

@@ -7,3 +7,9 @@ for file in ~/.{path,exports,aliases,functions,extra}; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
+
+. /usr/local/share/zsh/site-functions/zsh-history-substring-search.sh
+
+# Configure history substring search
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
